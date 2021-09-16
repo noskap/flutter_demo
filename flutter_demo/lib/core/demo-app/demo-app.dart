@@ -11,7 +11,6 @@ import 'common/services/page.service.dart';
 import 'common/widgets/demo.dart';
 
 class DemoApp extends StatelessWidget {
-
   openMenu() {
     // _scaffoldKey.currentState.openEndDrawer();
   }
@@ -92,7 +91,7 @@ class DemoApp extends StatelessWidget {
               badgeColor: Colors.red,
               child: IconButton(
                 icon: Icon(Icons.menu),
-                color: Colors.black54, // TODO this is invisible in dark mode
+                color: Theme.of(context).buttonTheme.colorScheme?.primary ?? Colors.grey,
                 onPressed: () {
                   openMenu();
                 },

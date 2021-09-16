@@ -39,7 +39,6 @@ dependencies:
   flutter_spinkit: ^5.1.0
   flutter_login:
   font_awesome_flutter: ^9.1.0
-  geolocator:
   google_fonts: ^2.1.0
   http:
   flutter_native_splash: ^1.2.3
