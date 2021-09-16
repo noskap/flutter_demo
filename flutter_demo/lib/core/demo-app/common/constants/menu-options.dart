@@ -57,17 +57,6 @@ class MenuOptions {
       },
     ),
     MenuItem(
-      name: 'Photo Translate',
-      icon: Icon(Icons.camera_alt, color: Colors.black),
-      action: (BuildContext context) {
-        return () {
-          print('Photo Translate');
-          Navigator.pop(context, true);
-          PageService().changePage(DemoRoutes.photoTranslate);
-        };
-      },
-    ),
-    MenuItem(
       name: 'Cart',
       icon: Icon(Icons.shopping_cart, color: Colors.black),
       action: (BuildContext context) {
