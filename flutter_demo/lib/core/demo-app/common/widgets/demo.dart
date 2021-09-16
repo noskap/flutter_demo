@@ -9,6 +9,7 @@ import '../bottom-bar-states.dart';
 class Demo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    BottomNavigationBarService().changeState(States.drawer);
     return Container(
       child: Column(
         children: [

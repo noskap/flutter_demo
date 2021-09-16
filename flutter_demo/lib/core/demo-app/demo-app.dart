@@ -11,10 +11,6 @@ import 'common/services/page.service.dart';
 import 'common/widgets/demo.dart';
 
 class DemoApp extends StatelessWidget {
-  openMenu() {
-    // _scaffoldKey.currentState.openEndDrawer();
-  }
-
   @override
   Widget build(BuildContext context) {
     // Toggle device preview package depending on screen size
@@ -82,28 +78,44 @@ class DemoApp extends StatelessWidget {
             ),
           ),
           endDrawerEnableOpenDragGesture: false,
-          floatingActionButton: IconButton(
-            icon: Badge(
-              showBadge: showBadge,
-              position: BadgePosition.topEnd(top: 6, end: -5),
-              elevation: 0,
-              shape: BadgeShape.circle,
-              badgeColor: Colors.red,
-              child: IconButton(
-                icon: Icon(Icons.menu),
-                color: Theme.of(context).buttonTheme.colorScheme?.primary ?? Colors.grey,
-                onPressed: () {
-                  openMenu();
-                },
-              ),
-            ),
-            color: Colors.blue,
-            onPressed: () {
-              openMenu();
-            },
-          ),
+          floatingActionButton: FloatingButtonWithContext(showBadge: showBadge),
           floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
         );
+      },
+    );
+  }
+}
+
+class FloatingButtonWithContext extends StatelessWidget {
+  late bool showBadge;
+
+  FloatingButtonWithContext({required this.showBadge});
+
+  openMenu(BuildContext context) {
+    // _scaffoldKey.currentState.openEndDrawer(); // Stateful
+    Scaffold.of(context).openEndDrawer(); // Stateless
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Badge(
+        showBadge: showBadge,
+        position: BadgePosition.topEnd(top: 6, end: -5),
+        elevation: 0,
+        shape: BadgeShape.circle,
+        badgeColor: Colors.red,
+        child: IconButton(
+          icon: Icon(Icons.menu),
+          color: Theme.of(context).buttonTheme.colorScheme?.primary ?? Colors.grey,
+          onPressed: () {
+            openMenu(context);
+          },
+        ),
+      ),
+      color: Colors.blue,
+      onPressed: () {
+        openMenu(context);
       },
     );
   }

@@ -2,10 +2,12 @@ import 'package:rxdart/rxdart.dart';
 
 import '../bottom-bar-states.dart';
 
-class BottomNavigationBarService {  // TODO redo this using riverpod
+class BottomNavigationBarService {
+  // TODO redo this using riverpod
   static final BottomNavigationBarService _singleton = BottomNavigationBarService._internal();
 
   factory BottomNavigationBarService() {
+
     return _singleton;
   }
 
