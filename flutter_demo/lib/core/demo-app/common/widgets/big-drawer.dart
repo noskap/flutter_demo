@@ -130,8 +130,8 @@ class BigDrawer extends StatelessWidget {
                                 BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50)), border: Border.all(color: Color(0xff232f34), width: 10)),
                             child: Center(
                               child: ClipOval(
-                                child: Image.network(
-                                  "https://i.stack.imgur.com/S11YG.jpg?s=64&g=1", // TODO change
+                                child: Image.asset(
+                                  "lib/common/assets/app-icon.png",
                                   fit: BoxFit.cover,
                                   height: 36,
                                   width: 36,

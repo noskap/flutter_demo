@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +28,7 @@ final AppRoutes = <String, WidgetBuilder>{
   Routes.notifications: (context) => Notifications(),
   Routes.settings: (context) => Settings(),
 };
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
@@ -34,7 +37,15 @@ void main() async {
     ),
   );
 }
-
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  // Override behavior methods and getters like dragDevices
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+    // etc.
+  };
+}
 class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ScopedReader watch) {
@@ -45,8 +56,11 @@ class MyApp extends ConsumerWidget {
           initialData: false,
           builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
             return DevicePreview(
+              storage: const NoDevicePreviewStorage(),
+              defaultDevice: Devices.android.pixel3,
               enabled: (!kReleaseMode && snapshot != null && snapshot.data != null && snapshot.data != false),
-              builder: (BuildContext context) => MaterialApp(
+              builder: (BuildContext context) => MaterialApp(scrollBehavior: MyCustomScrollBehavior(),
+                debugShowCheckedModeBanner: false,
                 routes: AppRoutes,
                 theme: AppTheme.lightTheme,
                 darkTheme: AppTheme.darkTheme,

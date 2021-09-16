@@ -12,12 +12,7 @@ class Products extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text('Currency Selector'),
-          ],
-        ),
-        Row(
-          children: [
-            Text('Search bar'),
+            Text('Text'),
           ],
         ),
         Expanded(
