@@ -58,7 +58,8 @@ class MyApp extends ConsumerWidget {
             return DevicePreview(
               storage: const NoDevicePreviewStorage(),
               defaultDevice: Devices.android.pixel3,
-              enabled: (!kReleaseMode && snapshot != null && snapshot.data != null && snapshot.data != false),
+              enabled: true,
+              // enabled: (!kReleaseMode && snapshot != null && snapshot.data != null && snapshot.data != false),
               builder: (BuildContext context) => MaterialApp(scrollBehavior: MyCustomScrollBehavior(),
                 debugShowCheckedModeBanner: false,
                 routes: AppRoutes,
