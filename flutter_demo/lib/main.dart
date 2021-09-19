@@ -37,15 +37,17 @@ void main() async {
     ),
   );
 }
+
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override
   Set<PointerDeviceKind> get dragDevices => {
-    PointerDeviceKind.touch,
-    PointerDeviceKind.mouse,
-    // etc.
-  };
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        // etc.
+      };
 }
+
 class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ScopedReader watch) {
@@ -60,7 +62,8 @@ class MyApp extends ConsumerWidget {
               defaultDevice: Devices.android.pixel3,
               // enabled: (!kReleaseMode && snapshot != null && snapshot.data != null && snapshot.data != false),
               enabled: (snapshot != null && snapshot.data != null && snapshot.data != false),
-              builder: (BuildContext context) => MaterialApp(scrollBehavior: MyCustomScrollBehavior(),
+              builder: (BuildContext context) => MaterialApp(
+                scrollBehavior: MyCustomScrollBehavior(),
                 debugShowCheckedModeBanner: false,
                 routes: AppRoutes,
                 theme: AppTheme.lightTheme,
