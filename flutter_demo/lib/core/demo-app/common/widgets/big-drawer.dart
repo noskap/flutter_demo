@@ -94,10 +94,6 @@ class BigDrawer extends StatelessWidget {
   ];
 
   void Function() showMenu(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    print('$width x $height');
-    print('${height / 2.3246753246753}  :  ${(56 * 6)}');
     return () {
       showModalBottomSheet(
         context: context,
@@ -109,8 +105,7 @@ class BigDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 Container(height: 36),
-                SizedBox(
-                  height: height / 2.3246753246753,
+                Expanded(
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
@@ -126,8 +121,7 @@ class BigDrawer extends StatelessWidget {
                         Positioned(
                           top: -36,
                           child: Container(
-                            decoration:
-                                BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50)), border: Border.all(color: Color(0xff232f34), width: 10)),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50)), border: Border.all(color: Color(0xff232f34), width: 10)),
                             child: Center(
                               child: ClipOval(
                                 child: Image.asset(
@@ -140,7 +134,7 @@ class BigDrawer extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Positioned(child: ListView(physics: NeverScrollableScrollPhysics(), children: items))
+                        Positioned(child: ListView(physics: AlwaysScrollableScrollPhysics(), children: items))
                       ],
                     ),
                   ),
