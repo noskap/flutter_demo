@@ -97,7 +97,7 @@ class BigDrawer extends StatelessWidget {
     return () {
       showModalBottomSheet(
         context: context,
-        builder: (BuildContext context) {
+        builder: (BuildContext buildContext) {
           return Container(
             decoration: BoxDecoration(color: Color(0xff232f34)),
             child: Column(
@@ -122,19 +122,10 @@ class BigDrawer extends StatelessWidget {
                           top: -36,
                           child: Container(
                             decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50)), border: Border.all(color: Color(0xff232f34), width: 10)),
-                            child: Center(
-                              child: ClipOval(
-                                child: Image.asset(
-                                  "lib/common/assets/app-icon.png",
-                                  fit: BoxFit.cover,
-                                  height: 36,
-                                  width: 36,
-                                ),
-                              ),
-                            ),
+                            child: Center(child: ClipOval(child: Image.asset("lib/common/assets/app-icon.png", fit: BoxFit.cover, height: 36, width: 36))),
                           ),
                         ),
-                        Positioned(child: ListView(physics: AlwaysScrollableScrollPhysics(), children: items))
+                        Positioned(child: ListView(physics: AlwaysScrollableScrollPhysics(), children: items)),
                       ],
                     ),
                   ),
