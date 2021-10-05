@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/demo-app/common/services/bottom-navigation-bar.service.dart';
 import 'package:flutter_demo/core/demo-app/common/services/page.service.dart';
-import 'package:flutter_demo/core/demo-app/common/widgets/demo.dart';
+import 'package:flutter_demo/core/demo-app/home.dart';
 import 'package:flutter_demo/core/demo-app/screens/notifications.screen.dart';
 import 'package:flutter_demo/core/demo-app/screens/store/store.dart';
 // TODO localization
@@ -13,8 +13,8 @@ class DemoRoutes {
   static const String settings = 'settings';
 }
 
-final DemoAppRoutes = <String, Widget>{
-  DemoRoutes.demo: Demo(),
+final Map<String, Widget> DemoAppRoutes = <String, Widget>{
+  DemoRoutes.demo: DemoHome(),
   DemoRoutes.shop: Store(),
   DemoRoutes.notifications: NotificationsScreen(),
   DemoRoutes.settings: Text(DemoRoutes.settings),

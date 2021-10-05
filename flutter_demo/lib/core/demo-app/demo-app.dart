@@ -7,7 +7,6 @@ import 'package:flutter_demo/core/demo-app/floating_action_button.dart';
 
 import 'common/constants/menu-options.dart';
 import 'common/services/page.service.dart';
-import 'common/widgets/demo.dart';
 
 class DemoApp extends StatelessWidget {
   @override
@@ -29,9 +28,9 @@ class DemoApp extends StatelessWidget {
               stream: PageService().stream,
               builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
                 if (snapshot.hasData) {
-                  return DemoAppRoutes[snapshot.data] ?? Demo();
+                  return DemoAppRoutes[snapshot.data] ?? DemoAppRoutes[DemoRoutes.demo] as Widget;
                 } else {
-                  return Demo(); // TODO new home widget here
+                  return DemoAppRoutes[DemoRoutes.demo] as Widget;
                 }
               },
             ),
