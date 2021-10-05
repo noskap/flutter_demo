@@ -8,18 +8,14 @@ import 'package:flutter_demo/core/demo-app/screens/store/store.dart';
 
 class DemoRoutes {
   static const String demo = 'demo';
-  static const String map = 'map';
   static const String shop = 'shop';
-  static const String cart = 'cart';
   static const String notifications = 'notifications';
   static const String settings = 'settings';
 }
 
 final DemoAppRoutes = <String, Widget>{
   DemoRoutes.demo: Demo(),
-  DemoRoutes.map: Text(DemoRoutes.map),
   DemoRoutes.shop: Store(),
-  DemoRoutes.cart: Store(),
   DemoRoutes.notifications: NotificationsScreen(),
   DemoRoutes.settings: Text(DemoRoutes.settings),
 };
@@ -42,29 +38,6 @@ class MenuOptions {
           print('Demo');
           Navigator.pop(context, true);
           PageService().changePage(DemoRoutes.demo);
-        };
-      },
-    ),
-    MenuItem(
-      name: 'Map',
-      icon: Icon(Icons.pin_drop_outlined, color: Colors.black),
-      action: (BuildContext context) {
-        return () {
-          print('Map');
-          Navigator.pop(context, true);
-          PageService().changePage(DemoRoutes.map);
-        };
-      },
-    ),
-    MenuItem(
-      name: 'Cart',
-      icon: Icon(Icons.shopping_cart, color: Colors.black),
-      action: (BuildContext context) {
-        return () {
-          print('Cart');
-          Navigator.pop(context, true);
-          BottomNavigationBarService().changeTab(0);
-          PageService().changePage(DemoRoutes.cart);
         };
       },
     ),
@@ -99,16 +72,6 @@ class MenuOptions {
           print('Settings');
           Navigator.pop(context, true);
           PageService().changePage(DemoRoutes.settings);
-        };
-      },
-    ),
-    MenuItem(
-      name: 'Mode',
-      icon: Icon(Icons.toggle_off, color: Colors.black),
-      action: (BuildContext context) {
-        return () {
-          // TODO toggle dark mode
-          print('Mode');
         };
       },
     ),

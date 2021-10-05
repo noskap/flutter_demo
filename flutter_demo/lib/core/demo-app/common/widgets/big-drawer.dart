@@ -26,70 +26,28 @@ class BigDrawer extends StatelessWidget {
 
   final List<ListTile> items = [
     ListTile(
-      title: Text(
-        "Inbox",
-        style: TextStyle(color: Colors.white),
-      ),
-      leading: Icon(
-        Icons.inbox,
-        color: Colors.white,
-      ),
-      onTap: () {},
+      title: Text("Inbox", style: TextStyle(color: Colors.white)),
+      leading: Icon(Icons.inbox, color: Colors.white),
     ),
     ListTile(
-      title: Text(
-        "Starred",
-        style: TextStyle(color: Colors.white),
-      ),
-      leading: Icon(
-        Icons.star_border,
-        color: Colors.white,
-      ),
-      onTap: () {},
+      title: Text("Starred", style: TextStyle(color: Colors.white)),
+      leading: Icon(Icons.star_border, color: Colors.white),
     ),
     ListTile(
-      title: Text(
-        "Sent",
-        style: TextStyle(color: Colors.white),
-      ),
-      leading: Icon(
-        Icons.send,
-        color: Colors.white,
-      ),
-      onTap: () {},
+      title: Text("Sent", style: TextStyle(color: Colors.white)),
+      leading: Icon(Icons.send, color: Colors.white),
     ),
     ListTile(
-      title: Text(
-        "Trash",
-        style: TextStyle(color: Colors.white),
-      ),
-      leading: Icon(
-        Icons.delete_outline,
-        color: Colors.white,
-      ),
-      onTap: () {},
+      title: Text("Trash", style: TextStyle(color: Colors.white)),
+      leading: Icon(Icons.delete_outline, color: Colors.white),
     ),
     ListTile(
-      title: Text(
-        "Spam",
-        style: TextStyle(color: Colors.white),
-      ),
-      leading: Icon(
-        Icons.error,
-        color: Colors.white,
-      ),
-      onTap: () {},
+      title: Text("Spam", style: TextStyle(color: Colors.white)),
+      leading: Icon(Icons.error, color: Colors.white),
     ),
     ListTile(
-      title: Text(
-        "Drafts",
-        style: TextStyle(color: Colors.white),
-      ),
-      leading: Icon(
-        Icons.mail_outline,
-        color: Colors.white,
-      ),
-      onTap: () {},
+      title: Text("Drafts", style: TextStyle(color: Colors.white)),
+      leading: Icon(Icons.mail_outline, color: Colors.white),
     ),
   ];
 
