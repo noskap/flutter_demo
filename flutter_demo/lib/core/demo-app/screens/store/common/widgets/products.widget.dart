@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/demo-app/screens/store/common/services/dummy-products.service.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import '../mon.dart';
 
@@ -42,7 +44,23 @@ class Products extends StatelessWidget {
                                       children: [
                                         Padding(padding: const EdgeInsets.only(top: 14, bottom: 14), child: Text(mon.pokemonName)),
                                         Spacer(),
-                                        Image.network(DummyProductsService().getImageUrl(mon.formatNumber()), width: 50, height: 50),
+                                        Stack(
+                                          children: <Widget>[
+                                            // const Center(
+                                            //     child: SpinKitThreeBounce(
+                                            //   color: Colors.grey,
+                                            //   size: 20.0,
+                                            // )),
+                                            FadeInImage.memoryNetwork(
+                                              fadeInDuration: Duration(milliseconds: 500),
+                                              image: DummyProductsService().getImageUrl(mon.formatNumber()),
+                                              placeholder: kTransparentImage,
+                                              width: 50,
+                                              height: 50,
+                                            ),
+                                          ],
+                                        ),
+                                        // Image.network(DummyProductsService().getImageUrl(mon.formatNumber()), width: 50, height: 50),
                                       ],
                                     ),
                                     Row(children: [Text(r'$'), Text(Random().nextInt(mon.pokemonId > 10 ? mon.pokemonId : 10).toString())]),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/core/demo-app/common/bottom-bar-states.dart';
 import 'package:flutter_demo/core/demo-app/common/services/bottom-navigation-bar.service.dart';
-import 'package:flutter_demo/core/demo-app/screens/store/common/constants/store.tabs.dart';
+
+import 'common/widgets/products.widget.dart';
 
 class Store extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class Store extends StatelessWidget {
         stream: BottomNavigationBarService().selectedTabStream,
         builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
           print(snapshot.data);
-          return StoreTabs[snapshot.data??0];
+          return Products();
         },
       ),
     );

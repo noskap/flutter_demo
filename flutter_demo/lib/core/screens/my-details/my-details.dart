@@ -3,7 +3,6 @@ import 'package:flutter_demo/core/common/constants/text-keys.dart';
 import 'package:flutter_demo/core/common/constants/text_input_style.dart';
 import 'package:flutter_demo/core/common/localization/Localizations.dart';
 import 'package:flutter_demo/core/screens/my-details/widgets/display-picture.widget.dart';
-import 'package:provider/provider.dart';
 
 class MyDetails extends StatelessWidget {
   final double _spacing = 20.0;
