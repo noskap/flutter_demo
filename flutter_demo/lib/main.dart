@@ -2,12 +2,12 @@ import 'dart:ui';
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/core/common/theme/app-theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'core/common/localization/Localizations.dart';
-import 'core/common/services/device-preview.service.dart';
+import 'common/localization/Localizations.dart';
+import 'common/services/device-preview.service.dart';
+import 'common/theme/app-theme.dart';
 import 'core/screens/my-details/my-details.dart';
 import 'core/screens/notifications/notifications.dart';
 import 'core/screens/root.dart';
@@ -80,8 +80,7 @@ class MyApp extends ConsumerWidget {
                 localeResolutionCallback: (Locale? locale, Iterable<Locale> supportedLocales) {
                   if (locale != null) {
                     for (var supportedLocale in supportedLocales) {
-                      if (supportedLocale.languageCode == locale.languageCode &&
-                          (supportedLocale.countryCode == '*' || supportedLocale.countryCode == locale.countryCode)) {
+                      if (supportedLocale.languageCode == locale.languageCode && (supportedLocale.countryCode == '*' || supportedLocale.countryCode == locale.countryCode)) {
                         return supportedLocale;
                       }
                     }

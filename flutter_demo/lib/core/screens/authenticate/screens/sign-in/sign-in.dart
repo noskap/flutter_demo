@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/core/common/constants/text-keys.dart';
-import 'package:flutter_demo/core/common/constants/text_input_style.dart';
-import 'package:flutter_demo/core/common/localization/Localizations.dart';
-import 'package:flutter_demo/core/common/widgets/loading.dart';
+import 'package:flutter_demo/common/constants/text-keys.dart';
+import 'package:flutter_demo/common/constants/text_input_style.dart';
+import 'package:flutter_demo/common/localization/Localizations.dart';
+import 'package:flutter_demo/common/widgets/loading.dart';
+
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 class SignIn extends StatelessWidget {
@@ -94,8 +95,7 @@ class SignIn extends StatelessWidget {
                       child: ElevatedButton(
                         // color: Colors.blue,
                         child: Text(AppLocalizations.of(context)?.translate(TextKeys.LogIn) ?? '', style: TextStyle(color: Colors.white)),
-                        onPressed: () async {
-                        },
+                        onPressed: () async {},
                       ),
                     ),
                     SizedBox(height: 12.0),
@@ -114,8 +114,7 @@ class SignIn extends StatelessWidget {
                     SizedBox(height: 20.0),
                     SignInButton(
                       Buttons.GoogleDark,
-                      onPressed: () async {
-                      },
+                      onPressed: () async {},
                     ),
                     SignInButton(
                       Buttons.Facebook,

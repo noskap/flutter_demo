@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/core/common/services/pictureService.dart';
+import 'package:flutter_demo/common/services/pictureService.dart';
 
 class DisplayPictureWidget extends StatelessWidget {
   @override

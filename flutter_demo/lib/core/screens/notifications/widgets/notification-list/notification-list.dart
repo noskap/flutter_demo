@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/common/providers/notifications-provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_demo/core/screens/notifications/common/notification.model.dart';
 import 'package:flutter_demo/core/screens/notifications/widgets/notification-item/notification-item.dart';
-import 'package:flutter_demo/core/common/providers/notifications-provider.dart';
 
 class NotificationsList extends ConsumerWidget {
   final List<NotificationModel> list;

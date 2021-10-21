@@ -179,17 +179,17 @@ flutter:
   fonts:
     - family: Cinzel
       fonts:
-        - asset: lib/core/common/assets/fonts/cinzel/static/Cinzel-Regular.ttf
+        - asset: lib/common/assets/fonts/cinzel/static/Cinzel-Regular.ttf
           weight: 400
-        - asset: lib/core/common/assets/fonts/cinzel/static/Cinzel-Medium.ttf
+        - asset: lib/common/assets/fonts/cinzel/static/Cinzel-Medium.ttf
           weight: 500
-        - asset: lib/core/common/assets/fonts/cinzel/static/Cinzel-SemiBold.ttf
+        - asset: lib/common/assets/fonts/cinzel/static/Cinzel-SemiBold.ttf
           weight: 600
-        - asset: lib/core/common/assets/fonts/cinzel/static/Cinzel-Bold.ttf
+        - asset: lib/common/assets/fonts/cinzel/static/Cinzel-Bold.ttf
           weight: 700
-        - asset: lib/core/common/assets/fonts/cinzel/static/Cinzel-ExtraBold.ttf
+        - asset: lib/common/assets/fonts/cinzel/static/Cinzel-ExtraBold.ttf
           weight: 800
-        - asset: lib/core/common/assets/fonts/cinzel/static/Cinzel-Black.ttf
+        - asset: lib/common/assets/fonts/cinzel/static/Cinzel-Black.ttf
           weight: 900
   #
   # For details regarding fonts from package dependencies,

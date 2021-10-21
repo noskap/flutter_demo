@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/core/common/constants/text-keys.dart';
-import 'package:flutter_demo/core/common/constants/text_input_style.dart';
-import 'package:flutter_demo/core/common/localization/Localizations.dart';
+import 'package:flutter_demo/common/constants/text-keys.dart';
+import 'package:flutter_demo/common/constants/text_input_style.dart';
+import 'package:flutter_demo/common/localization/Localizations.dart';
+
 import 'package:flutter_demo/core/screens/my-details/widgets/display-picture.widget.dart';
 
 class MyDetails extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/core/common/services/device-preview.service.dart';
+import 'package:flutter_demo/common/services/device-preview.service.dart';
+
 import 'package:flutter_demo/core/demo-app/common/services/notification.service.dart';
 import 'package:flutter_demo/core/demo-app/common/widgets/big-drawer.dart';
 import 'package:flutter_demo/core/demo-app/end_drawer.dart';
