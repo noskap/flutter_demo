@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+extension HexColor on Color {
+  /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
+  static Color fromHex(String hexString) {
+    final buffer = StringBuffer();
+    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+    buffer.write(hexString.replaceFirst('#', ''));
+    return Color(int.parse(buffer.toString(), radix: 16));
+  }
+
+  /// Prefixes a hash sign if [leadingHashSign] is set to `true` (default is `true`).
+  String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'
+      '${alpha.toRadixString(16).padLeft(2, '0')}'
+      '${red.toRadixString(16).padLeft(2, '0')}'
+      '${green.toRadixString(16).padLeft(2, '0')}'
+      '${blue.toRadixString(16).padLeft(2, '0')}';
+}
+
 class AppTheme {
   AppTheme._();
 
@@ -14,12 +31,12 @@ class AppTheme {
   static const Color _darkOnPrimaryColor = Colors.white;
   static final Color _darkPrimaryColor = Colors.grey[800] ?? Colors.grey;
   static const Color _darkPrimaryVariantColor = Colors.black;
-  static const Color _darkSecondaryColor = Colors.white;
+  static Color _darkSecondaryColor = HexColor.fromHex('#1e243b');
 
   // fontFamily in ThemeData does not work globally, so this makes reuse easier
   // https://github.com/flutter/flutter/issues/46863
   static final TextStyle _commonTextStyle = TextStyle(
-      // fontFamily: 'Cinzel'
+    // fontFamily: 'Cinzel'
     fontFamily: GoogleFonts.notoSans().fontFamily,
   );
 
@@ -28,16 +45,16 @@ class AppTheme {
     fontSize: 16.0,
   );
   static final TextStyle _lightScreenHeadingTextStyle = _commonTextStyle.copyWith(
-      color: _lightOnPrimaryColor,
-      fontSize: 48.0,
+    color: _lightOnPrimaryColor,
+    fontSize: 48.0,
   );
   static final TextStyle _lightScreenTaskDurationTextStyle = _commonTextStyle.copyWith(
     color: Colors.grey,
     fontSize: 16.0,
   );
   static final TextStyle _lightScreenTaskNameTextStyle = _commonTextStyle.copyWith(
-      color: _lightOnPrimaryColor,
-      fontSize: 20.0,
+    color: _lightOnPrimaryColor,
+    fontSize: 20.0,
   );
   static final TextTheme _lightTextTheme = TextTheme(
     bodyText1: _lightScreenTaskNameTextStyle,
@@ -50,15 +67,9 @@ class AppTheme {
   static final TextStyle _darkAppTitleTextStyle = _lightAppTitleTextStyle.copyWith(
     color: _darkOnPrimaryColor,
   );
-  static final TextStyle _darkScreenHeadingTextStyle = _lightScreenHeadingTextStyle.copyWith(
-      color: _darkOnPrimaryColor
-  );
-  static final TextStyle _darkScreenTaskNameTextStyle = _lightScreenTaskNameTextStyle.copyWith(
-      color: _darkOnPrimaryColor
-  );
-  static final TextStyle _darkScreenTaskDurationTextStyle = _lightScreenTaskDurationTextStyle.copyWith(
-    color: _darkOnPrimaryColor
-  );
+  static final TextStyle _darkScreenHeadingTextStyle = _lightScreenHeadingTextStyle.copyWith(color: _darkOnPrimaryColor);
+  static final TextStyle _darkScreenTaskNameTextStyle = _lightScreenTaskNameTextStyle.copyWith(color: _darkOnPrimaryColor);
+  static final TextStyle _darkScreenTaskDurationTextStyle = _lightScreenTaskDurationTextStyle.copyWith(color: _darkOnPrimaryColor);
   static final TextTheme _darkTextTheme = TextTheme(
     bodyText1: _darkScreenTaskNameTextStyle,
     bodyText2: _darkScreenTaskDurationTextStyle, // listTile subtitle uses bodyText2
@@ -71,13 +82,7 @@ class AppTheme {
     // fontFamily: 'Cinzel',
     fontFamily: GoogleFonts.notoSans().fontFamily,
     scaffoldBackgroundColor: _lightSecondaryColor,
-    appBarTheme: AppBarTheme(
-        textTheme: _lightTextTheme,
-        color: _lightPrimaryColor,
-        iconTheme: IconThemeData(
-            color: Colors.white
-        )
-    ),
+    appBarTheme: AppBarTheme(textTheme: _lightTextTheme, color: _lightPrimaryColor, iconTheme: IconThemeData(color: Colors.white)),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: _lightPrimaryColor,
       unselectedItemColor: Colors.white,

@@ -7,8 +7,7 @@ import 'package:flutter_demo/core/demo-app/common/services/notification.service.
 class DemoHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO dark mode toggle
-    //       icon: Icon(Icons.toggle_off, color: Colors.black),
+    NotificationService().pushNotification(AppLocalizations.of(context)?.translate(TextKeys.NotificationPlaceholder) ?? '');
     return Container(
       child: Column(
         children: [

@@ -16,7 +16,7 @@ class DemoRoutes {
 final Map<String, Widget> DemoAppRoutes = <String, Widget>{
   DemoRoutes.demo: DemoHome(),
   DemoRoutes.shop: Store(),
-  DemoRoutes.notifications: NotificationsScreen(),
+  DemoRoutes.notifications: NotificationsScreen(), // TODO instead of a replacement, push a screen or show notifications some other way
   DemoRoutes.settings: Text(DemoRoutes.settings),
 };
 
