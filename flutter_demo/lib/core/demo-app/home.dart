@@ -19,7 +19,7 @@ class DemoHome extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  child: Text(AppLocalizations.of(context)?.translate(TextKeys.Add) ?? ''),
+                  child: Text(AppLocalizations.of(context)?.translate(TextKeys.Add) ?? ''), // TODO update this to use a provider so that its not a nullable string
                   onPressed: () {
                     NotificationService().pushNotification(AppLocalizations.of(context)?.translate(TextKeys.NotificationPlaceholder) ?? '');
                   },
